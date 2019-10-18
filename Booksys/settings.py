@@ -135,3 +135,12 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/media')
+
+# 使用redis保存session数据
+SESSION_ENGINE = 'redis_sessions.session'
+SESSION_REDIS_HOST = 'localhost'
+SESSION_REDIS_PORT = 6379
+SESSION_REDIS_DB = 4
+SESSION_REDIS_PASSWORD = ''
+# 前缀,session标识码
+SESSION_REDIS_PREFIX = 'session'
