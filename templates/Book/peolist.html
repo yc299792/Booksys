@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>peolist</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    {% for foo in peolist %}
+        {% comment %}
+        {% if foo.id <= 25 %}
+            <li class="red">{{ foo.name }}--{{ foo.description }}</li><br />
+            {% elif foo.id <= 27 %}
+             <li class="yellow">{{ foo.name }}--{{ foo.description }}</li><br />
+            {% else %}
+             <li class="green">{{ foo.name }}--{{ foo.description }}</li><br />
+        {% endif %}
+        {% endcomment %}
+
+
+    {% endfor %}
+
+
+</body>
+</html>

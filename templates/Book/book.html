@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>book</title>
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $.get('/books',function (data) {
+            {#    回调函数#}
+
+                datalist = data.data;
+                {#console.log(datalist);#}
+                $.each(datalist,function (i,item) {
+                    console.log(item[0],item[1]);
+                    $('#book').append('<option value="'+item[0]+'">'+item[1]+'</option>');
+
+                })
+                
+            })
+            
+            $('#book').change(function () {
+                bookid = $(this).val()
+                $.get('/peoples',{'bookid':bookid},
+                    function (data) {
+                     datalist = data.data;
+                    {#console.log(datalist);#}
+                        $('#peo').empty().append('<option value="0">请选择人物</option>');
+                    $.each(datalist,function (i,item) {
+                        {#console.log(item[0],item[1]);#}
+                        $('#peo').append('<option value="'+item[0]+'">'+item[1]+'</option>');
+
+                })
+
+                    
+                })
+            })
+            $('#peo').change(function () {
+                peoid = $(this).val()
+
+                $.get('/des',{'peoid':peoid},function (data) {
+                     datalist = data.data;
+                    {#console.log(datalist);#}
+                        $('#des').empty().append('<option value="0">请选择技能</option>');
+                {#        $.each(datalist,function (i,item) {#}
+                        {#console.log(item[0],item[1]);#}
+                {#        $('#des').append('<option value="'+item[0]+'">'+item[1]+'</option>');#}
+                {##}
+                    $('#des').append('<option value="1">'+datalist+'</option>');
+                }
+
+
+                )
+
+
+
+
+            })
+            
+        })
+    </script>
+</head>
+<body>
+<select id="book"><option value="0">请选择书名</option></select>
+<select id="peo"><option value="0">请选择人物</option></select>
+<select id="des"><option value="0">请选择技能</option></select>
+
+</body>
+</html>

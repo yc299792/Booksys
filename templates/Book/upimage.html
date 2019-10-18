@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upimage</title>
+</head>
+<body>
+<form action ="/recv" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="upimage">
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

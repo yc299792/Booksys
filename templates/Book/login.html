@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+
+<form action="/logincheck" method="post">
+    {% csrf_token %}
+    user：<input type="text" name="username"><br />
+    pass:<input type="password" name="password"><br />
+    <img src="/verifyCode"><br />
+    请输入验证码：<input type="text" name="vcode">
+    <input type="submit" value="sub">
+</form>
+
+</body>
+</html>

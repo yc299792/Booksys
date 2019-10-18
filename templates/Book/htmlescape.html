@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{ context|safe }}
+{% autoescape off %}
+    {{ context }}
+{% endautoescape %}
+
+{{ text|default:'<h1>hhhhhh</h1>' }}
+{{ text|default:'&lt;h1&gt;hhhhhh&lt;/h1&gt;' }}
+</body>
+</html>

@@ -1,0 +1,31 @@
+from django.conf.urls import url
+from Book import views
+
+urlpatterns = [
+    url(r'^index2$',views.index,name='index'),
+    url(r'^booklist$',views.booklist),
+    url(r'^create$',views.create),
+    url(r'^delete/(\d+)$',views.delete),
+    url(r'^setsession$',views.setsession),
+    url(r'^getsession$',views.getsession),
+    url(r'^peopleinfos$',views.propleinfos),
+    url(r'^child$',views.child),
+    url(r'^htmlescape$',views.htmlescape),
+    url(r'^csrf$',views.csrf),
+    url(r'csrfcheck$',views.csrfcheck),
+    url(r'^login$',views.login),
+    url(r'^logincheck$',views.logincheck),
+    url(r'^change_pwd$',views.change_pwd),
+    url(r'^changepwdcheck$',views.changepwdcheck),
+    url(r'^verifyCode$',views.verifyCode),
+    url(r'^fan$',views.fan),
+    url(r'^keyword3/(?P<a>\d+)/(?P<b>\d+)$',views.keyword,name='key'),
+    url(r'^positionword11111/(\d+)/(\d+)$',views.positionword,name = 'position'),
+    url(r'^reverse$',views.redirect_index),
+    url(r'^upimage$',views.upimage),
+    url(r'^recv$',views.recv),
+    url(r'^book$',views.book),
+    url(r'^books$',views.books),
+    url(r'^peoples$',views.peoples),
+    url(r'^des$',views.des),
+]

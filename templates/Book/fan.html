@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+固定写法：<br>
+<a href="/index">首页</a><br>
+反向解析：<br>
+<a href="{% url 'Book:index' %}">首页反向解析</a>
+
+固定写法：<br>
+<a href="/keyword/1/2">key</a><br>
+反向解析：<br>
+<a href="{% url 'Book:key' a=1 b=2%}">反向解析key</a><br>
+
+固定写法：<br>
+<a href="/positionword/1/2">positionkey</a><br>
+反向解析：<br>
+<a href="{% url 'Book:position' 1 2%}">反向解析positionkey</a>
+
+</body>
+</html>

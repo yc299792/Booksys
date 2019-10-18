@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>changepwd</title>
+</head>
+<body>
+<form action="/changepwdcheck" method="post">
+    {% csrf_token %}
+    newpwd:<input type="text" name = 'newpwd'>
+    <input type="submit" value="sub">
+</form>
+</body>
+</html>
